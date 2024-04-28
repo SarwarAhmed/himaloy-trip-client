@@ -1,8 +1,15 @@
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
-import { createContext, useState } from "react";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
 import app from "../firebase/firebase.config";
 import PropTypes from "prop-types";
+
+
+
 export const AuthContext = createContext();
+
+const googleProvider = new GoogleAuthProvider();
+const gitHubProvider = new GithubAuthProvider();
+
 
 const auth = getAuth(app);
 
@@ -15,13 +22,46 @@ const AuthProviders = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
+    // Login with email and password
+    const signIn = (email, password) => {
+        setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password);
+    }
+
+    // Login with Google
+    const googleLogin = () => {
+        return signInWithPopup(auth, googleProvider);
+    }
+
+    // Login with GitHub
+    const gitHubLogin = () => {
+        return signInWithPopup(auth, gitHubProvider);
+    }
+
+    const logOut = () => {
+        setLoading(true);
+        return signOut(auth);
+    }
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            // console.log('currentUser', currentUser);
+            setUser(currentUser);
+            setLoading(false);
+        });
+
+        return () => unsubscribe();
+    }, []);
+
 
     const authInfo = {
         user,
-        setUser,
-        createUser,
         loading,
-        setLoading,
+        createUser,
+        signIn,
+        googleLogin,
+        gitHubLogin,
+        logOut,
     };
 
 

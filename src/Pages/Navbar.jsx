@@ -1,9 +1,30 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../provider/AuthProviders";
+import Swal from "sweetalert2";
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
 // import logo from "../assets/om-logo.png";
 // import sun from "../assets/sun.svg";
 // import moon from "../assets/moon.svg";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    console.log(user);
+
+    const handleSignOut = () => {
+        logOut()
+            .then(
+                // console.log('Sign Out Successfully');
+                // swal('Success', 'Sign Out Successfully', 'success')
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: 'Sign Out Successfully',
+                })
+            )
+            .catch()
+    };
 
     const [theme, setTheme] = useState(
         localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
@@ -64,23 +85,40 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div className="dropdown dropdown-end">
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    {
+                        user ?
+                            <div className="dropdown dropdown-end">
+                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full"
+                                        data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName || user.email}
+                                    >
+                                        <img
+
+                                            className="rounded-full w-10 h-10 object-cover bg-gray-50"
+                                            alt="Tailwind CSS Navbar component" src={user.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
+                                    </div>
+                                    <Tooltip className="text-blue-500" id="my-tooltip" />
+                                </div>
+                                <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                                    <li>
+                                        <a className="justify-between">
+                                            Profile
+                                        </a>
+                                    </li>
+                                    <li><a>Settings</a></li>
+                                    <li>
+                                        <button
+                                            onClick={handleSignOut}
+                                        >Log out</button>
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                        <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                </a>
-                            </li>
-                            <li><a>Settings</a></li>
-                            <li><a>Logout</a></li>
-                        </ul>
-                    </div>
+                            :
+                            <a href="/login" className="btn btn-primary">Login</a>
+                    }
                 </div>
+
+                {/* Dark and light switcher */}
                 <div className="px-4">
                     <label className="swap swap-rotate">
 
