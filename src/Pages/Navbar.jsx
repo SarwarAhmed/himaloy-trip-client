@@ -3,6 +3,7 @@ import { AuthContext } from "../provider/AuthProviders";
 import Swal from "sweetalert2";
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
+import { Link } from "react-router-dom";
 // import logo from "../assets/om-logo.png";
 // import sun from "../assets/sun.svg";
 // import moon from "../assets/moon.svg";
@@ -56,7 +57,18 @@ const Navbar = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a>Item 1</a></li>
+                            <li>
+                                <Link to={"/"}>Home</Link>
+                            </li>
+                            <li>
+                                <Link to={"/allspots"}>All Spots</Link>
+                            </li>
+                            {
+                                user &&
+                                <li>
+                                    <Link to="/addspot">Add Spost</Link>
+                                </li>
+                            }
                             <li>
                                 <a>Parent</a>
                                 <ul className="p-2">
@@ -67,11 +79,22 @@ const Navbar = () => {
                             <li><a>Item 3</a></li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Himaloy Trip</a>
+                    <Link to={"/"} className="btn btn-ghost text-xl">Himaloy Trip</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a>Item 1</a></li>
+                        <li>
+                            <Link to={'/'}>Home</Link>
+                        </li>
+                        <li>
+                            <Link to={'/allspots'}>All Spots</Link>
+                        </li>
+                        {
+                            user &&
+                            <li>
+                                <Link to="/addspot">Add Spost</Link>
+                            </li>
+                        }
                         <li>
                             <details>
                                 <summary>Parent</summary>
@@ -101,9 +124,9 @@ const Navbar = () => {
                                 </div>
                                 <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                                     <li>
-                                        <a className="justify-between">
+                                        <Link to="/profile" className="justify-between">
                                             Profile
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li><a>Settings</a></li>
                                     <li>
