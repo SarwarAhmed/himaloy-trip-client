@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Swal from "sweetalert2";
 
 const AddSpost = () => {
@@ -8,7 +9,8 @@ const AddSpost = () => {
 
         const image = form.image.value;
         const touristSpotName = form.touristSpotName.value;
-        const country = form.country.value;
+        // const country = form.country.value;
+        const country = form.country.options[form.country.selectedIndex].value;
         const location = form.location.value;
         const shortDescription = form.shortDescription.value;
         const cost = form.cost.value;
@@ -43,6 +45,10 @@ const AddSpost = () => {
             });
     };
 
+    useEffect(() => {
+        document.title = 'Himaloy - Add Spot';
+    }, []);
+
     return (
         <div>
             <div className="hero pt-10 xmin-h-screen bg-base-200">
@@ -67,8 +73,8 @@ const AddSpost = () => {
                             <label className="label">
                                 <span className="label-text">Country Name</span>
                             </label>
-                            <input type="text" name="country" placeholder="Country" className="input input-bordered" required />
-                            {/* <select className="select select-bordered w-full max-w-xs">
+                            {/* <input type="text" name="country" placeholder="Country" className="input input-bordered" required /> */}
+                            <select className="select select-bordered w-full max-w-xs" name="country">
                                 <option disabled selected>Select Country</option>
                                 <option value="Bangladesh">Bangladesh</option>
                                 <option value="Thailand">Thailand</option>
@@ -78,7 +84,7 @@ const AddSpost = () => {
                                 <option value="Japan">Japan</option>
                                 <option value="Vietnam">Vietnam</option>
                                 <option value="Combodia">Combodia</option>
-                            </select> */}
+                            </select>
                         </div>
 
                         <div className="form-control">

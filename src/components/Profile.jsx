@@ -6,7 +6,7 @@ const Profile = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        document.title = 'Himaloy E - Profile';
+        document.title = 'Himaloy - Profile';
     }, []);
 
     return (

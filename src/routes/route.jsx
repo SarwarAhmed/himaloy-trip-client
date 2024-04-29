@@ -6,6 +6,7 @@ import Login from "../components/login";
 import PrivateRoute from "./PrivateRoute";
 import Profile from "../components/Profile";
 import AddSpost from "../components/AddSpost";
+import AllSpots from "../components/AllSpots";
 
 const route = createBrowserRouter([
     {
@@ -31,7 +32,7 @@ const route = createBrowserRouter([
             },
             {
                 path: '/allspots',
-                element: <h3>All sports</h3>
+                element: <AllSpots />,
             }
         ]
     },
