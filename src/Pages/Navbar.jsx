@@ -70,6 +70,14 @@ const Navbar = () => {
                                 </li>
                             }
                             <li>
+                            </li>
+                            {
+                                user &&
+                                <li>
+                                    <Link to="/myList">My List</Link>
+                                </li>
+                            }
+                            <li>
                                 <a>Parent</a>
                                 <ul className="p-2">
                                     <li><a>Submenu 1</a></li>
@@ -93,6 +101,12 @@ const Navbar = () => {
                             user &&
                             <li>
                                 <Link to="/addspot">Add Spost</Link>
+                            </li>
+                        }
+                        {
+                            user &&
+                            <li>
+                                <Link to="/myList">My List</Link>
                             </li>
                         }
                         <li>

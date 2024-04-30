@@ -9,6 +9,7 @@ import AddSpost from "../components/AddSpost";
 import AllSpots from "../components/AllSpots";
 import Home from "../components/Home";
 import Spot from "../components/Spot";
+import MyList from "../components/MyList";
 
 const route = createBrowserRouter([
     {
@@ -32,6 +33,11 @@ const route = createBrowserRouter([
             {
                 path: '/profile',
                 element: <PrivateRoute><Profile /></PrivateRoute>,
+            },
+            {
+                path: '/myList',
+                element: <PrivateRoute><MyList /></PrivateRoute>,
+                loader: () => fetch('http://127.0.0.1:5000/myList')
             },
             {
                 path: '/addspot',
