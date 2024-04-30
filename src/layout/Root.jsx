@@ -1,20 +1,18 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../Pages/Navbar";
-import { useEffect } from "react";
+import Footer from "../components/Footer";
 
 const Root = () => {
-    useEffect(() => {
-        document.title = 'Himaloy - Home';
-    }, []);
-    return (
-        <div>
 
+    return (
+        <div className="">
             <Navbar />
-            <main>
+            <main className="min-h-[calc(100vh-172px)]">
                 <div>
                     <Outlet />
                 </div>
             </main>
+           <Footer />
         </div>
     );
 };
