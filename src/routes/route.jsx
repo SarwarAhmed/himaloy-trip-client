@@ -7,6 +7,7 @@ import PrivateRoute from "./PrivateRoute";
 import Profile from "../components/Profile";
 import AddSpost from "../components/AddSpost";
 import AllSpots from "../components/AllSpots";
+import Home from "../components/Home";
 
 const route = createBrowserRouter([
     {
@@ -14,6 +15,10 @@ const route = createBrowserRouter([
         element: <Root />,
         errorElement: <ErrorPage />,
         children: [
+            {
+                path: '/',
+                element: <Home />,
+            },
             {
                 path: "/register",
                 element: <Register />,
@@ -33,6 +38,7 @@ const route = createBrowserRouter([
             {
                 path: '/allspots',
                 element: <AllSpots />,
+                loader: () => fetch('http://127.0.0.1:5000/allspots'),
             }
         ]
     },

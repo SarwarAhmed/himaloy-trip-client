@@ -1,7 +1,11 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../provider/AuthProviders";
 
 const AddSpost = () => {
+    const { user } = useContext(AuthContext);
+    console.log(user);
+
     const handleAddSpotForm = (event) => {
         event.preventDefault();
 
@@ -134,14 +138,18 @@ const AddSpost = () => {
                             <label className="label">
                                 <span className="label-text">User Name</span>
                             </label>
-                            <input type="text" name="username" placeholder="User Name" className="input input-bordered" required />
+                            <input type="text"
+                            defaultValue={user.displayName}
+                            name="username" placeholder="User Name" className="input input-bordered" required />
                         </div>
 
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">User Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="User Email" className="input input-bordered" required />
+                            <input type="email"
+                            defaultValue={user.email}
+                             name="email" placeholder="User Email" className="input input-bordered" required />
                         </div>
 
                         <div className="form-control mt-6 col-span-2">
