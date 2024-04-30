@@ -8,6 +8,7 @@ import Profile from "../components/Profile";
 import AddSpost from "../components/AddSpost";
 import AllSpots from "../components/AllSpots";
 import Home from "../components/Home";
+import Spot from "../components/Spot";
 
 const route = createBrowserRouter([
     {
@@ -35,6 +36,12 @@ const route = createBrowserRouter([
             {
                 path: '/addspot',
                 element: <PrivateRoute><AddSpost /></PrivateRoute>,
+            },
+            // get a single spot by id
+            {
+                path : '/spot/:id',
+                element : <Spot />,
+                loader : ({params}) => fetch(`http://127.0.0.1:5000/spot/${params.id}`),
             },
             {
                 path: '/allspots',
