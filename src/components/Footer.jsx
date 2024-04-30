@@ -5,21 +5,16 @@ const Footer = () => {
         <div className=' bg-rose-300'>
             <footer className="text-gray-900 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col p-4 mx-auto xmd:p-8 lg:flex-row divide-gray-600">
-                    <ul className="self-center py-6 space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:flex-1 lg:justify-start">
+                    <ul className="self-center space-x-4 py-6 space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:flex-1 lg:justify-start">
                         <NavLink
                             to={'/'}
                         >
                             <span>Home</span>
                         </NavLink>
                         <NavLink
-                            to={'/support'}
+                            to={'/allSpots'}
                         >
-                            <span>Support</span>
-                        </NavLink>
-                        <NavLink
-                            to={'/ourteam'}
-                        >
-                            <span>Team</span>
+                            <span>All Spots</span>
                         </NavLink>
                     </ul>
                     <div className="flex flex-col justify-center pt-6 lg:pt-0">

@@ -10,6 +10,7 @@ import AllSpots from "../components/AllSpots";
 import Home from "../components/Home";
 import Spot from "../components/Spot";
 import MyList from "../components/MyList";
+import UpdateSpot from "../components/UpdateSpot";
 
 const route = createBrowserRouter([
     {
@@ -38,6 +39,12 @@ const route = createBrowserRouter([
                 path: '/myList',
                 element: <PrivateRoute><MyList /></PrivateRoute>,
                 loader: () => fetch('http://127.0.0.1:5000/myList')
+            },
+            // update spot
+            {
+                path: '/editSpot/:id',
+                element: <PrivateRoute><UpdateSpot /></PrivateRoute>,
+                loader: ({params}) => fetch(`http://127.0.0.1:5000/editSpot/${params.id}`),
             },
             {
                 path: '/addspot',
