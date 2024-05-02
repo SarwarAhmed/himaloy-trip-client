@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProviders";
 
 const AllSpots = () => {
@@ -30,7 +30,7 @@ const AllSpots = () => {
                                 </figure>
                                 <h2 className="card-title">{spot.touristSpotName}</h2>
                                 <p>{spot.shortDescription}</p>
-                                <a href={`/spot/${spot._id}`} className="btn btn-primary">Read More</a>
+                                <Link to={`/spot/${spot._id}`} className="btn btn-primary">Read More</Link>
                             </div>
                         </div>
                     ))}
