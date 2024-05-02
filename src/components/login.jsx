@@ -156,13 +156,7 @@ const Login = () => {
                         className="flex w-full justify-center rounded-md bg-white px-3 py-3 text-sm font-semibold leading-6  shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                         <img src="https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA" alt="google" className="w-6 h-6" />
                         {/* <span className="ml-2">Login with Google</span> */}
-                    </button>
-
-                    <button
-                        onClick={() => gitHubLogin()}
-                        className="flex w-full justify-center rounded-md bg-white px-3 py-3 text-sm font-semibold leading-6  shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github" className="w-6 h-6" />
-                        {/* <span className="ml-2">Login with GitHub</span> */}
+                        <span className="text-xl text-gray-700 font-bold ml-4">Sign with Google</span>
                     </button>
                 </div>
             </div>
