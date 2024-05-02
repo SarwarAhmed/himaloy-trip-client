@@ -1,6 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProviders';
+import Swal from 'sweetalert2';
 
 const MyList = () => {
     const myList = useLoaderData();
@@ -19,6 +20,39 @@ const MyList = () => {
             <span className="loading loading-spinner loading-lg"></span>
         </div>
     }
+
+    const handleDeleteSpot = (_id) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://127.0.0.1:5000/deleteSpot/${_id}`, {
+                    method: 'DELETE',
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                            window.location.reload();
+                        }
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    });
+            }
+        })
+    }
+
 
     return (
         <div>
@@ -57,7 +91,7 @@ const MyList = () => {
                                                                         <Link to={`/spot/${spot._id}`} className='btn btn-sm btn-info'>View</Link>
                                                                         <Link to={`/editSpot/${spot._id}`} className='btn btn-sm btn-success'>Edit</Link>
                                                                         <button
-                                                                            to={`/deleteSpot/${spot._id}`}
+                                                                            onClick={() => handleDeleteSpot(spot._id)}
                                                                             className='btn btn-sm btn-error'
                                                                         >Delete</button>
                                                                     </td>
