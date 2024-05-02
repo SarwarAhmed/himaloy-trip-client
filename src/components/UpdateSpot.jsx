@@ -10,6 +10,17 @@ const UpdateSpot = () => {
     const { _id, image, touristSpotName, country, location, shortDescription, cost,
         seasonality, travelTime, totalVisitorsPerYear, username, email } = currentSpot;
 
+    if (user.email !== email) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Unauthorized',
+            text: 'You are not authorized to update this spot',
+            confirmButtonAriaLabel: 'Ok',
+        })
+        window.location.href = '/';
+    }
+
+
     const handleUpdateSpotForm = (e) => {
         e.preventDefault();
         const form = event.target;
