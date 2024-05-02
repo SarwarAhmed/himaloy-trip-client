@@ -40,23 +40,23 @@ const route = createBrowserRouter([
                 element: <PrivateRoute><MyList /></PrivateRoute>,
                 loader: () => fetch('http://127.0.0.1:5000/myList')
             },
+
             // update spot
             {
                 path: '/editSpot/:id',
                 element: <PrivateRoute><UpdateSpot /></PrivateRoute>,
-                loader: ({params}) => fetch(`http://127.0.0.1:5000/editSpot/${params.id}`),
+                loader: ({ params }) => fetch(`http://127.0.0.1:5000/editSpot/${params.id}`),
             },
             {
                 path: '/addspot',
                 element: <PrivateRoute><AddSpost /></PrivateRoute>,
             },
+
             // get a single spot by id
             {
-                path : '/spot/:id',
-                // element : <Spot />,
-                // private route
+                path: '/spot/:id',
                 element: <PrivateRoute><Spot /></PrivateRoute>,
-                loader : ({params}) => fetch(`http://127.0.0.1:5000/spot/${params.id}`),
+                loader: ({ params }) => fetch(`http://127.0.0.1:5000/spot/${params.id}`),
             },
             {
                 path: '/allspots',

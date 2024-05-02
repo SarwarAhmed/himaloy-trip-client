@@ -60,6 +60,24 @@ const Register = () => {
                     photoURL: data.PhotoUrl
                 })
                 console.log(user)
+                // new user has been created
+                // data time
+                const createdAt = new Date().toISOString();
+                //  user data with email
+                const createdUser = { ...data, createdAt, uid: user.uid }
+                fetch('http://127.0.0.1:5000/addUser', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(createdUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.insertedId) {
+                            console.log('user added to the database')
+                        }
+                    })
                 // Swal('Success', 'Register successfully', 'success')
                 Swal.fire({
                     icon: "success",
