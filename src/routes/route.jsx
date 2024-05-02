@@ -53,7 +53,9 @@ const route = createBrowserRouter([
             // get a single spot by id
             {
                 path : '/spot/:id',
-                element : <Spot />,
+                // element : <Spot />,
+                // private route
+                element: <PrivateRoute><Spot /></PrivateRoute>,
                 loader : ({params}) => fetch(`http://127.0.0.1:5000/spot/${params.id}`),
             },
             {
