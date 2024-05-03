@@ -44,12 +44,12 @@ const Slider = () => {
                         <h1 className="relative isolate xoverflow-hidden bg-gray-900 h-96 md:h-[600px]">
                             <img
                                 className='bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20 absolute  h-96 md:h-[600px] inset-0 -z-10  w-full object-cover object-right md:object-center'
-                                src="https://images.unsplash.com/photo-1577624060070-ca1afe89ddad?q=80&w=1626&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                                src="https://i.ibb.co/px7zv5j/Angkor-Wat-Cambodia.webp" alt="" />
                             <div className="mx-auto px-6 lg:px-8 h-96 md:h-[600px] flex justify-center items-center text-center">
                                 <div className="mx-auto xmax-w-2xl lg:mx-0 border-b-4 uppercase xrounded">
                                     <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl p-4">
                                         <Typewriter
-                                            words={['Welcome to Sylhet', 'Welcome to Bangladesh', 'Welcome to Himaloy']}
+                                            words={['Welcome to Angkor Wat', 'Welcome to Hoan Kiem Lake', 'Welcome to Himaloy']}
                                             cursor={true} cursorStyle='|' loop={Infinity} typeSpeed={100} deleteSpeed={100} delaySpeed={1000} />
                                     </h2>
                                 </div>
@@ -64,12 +64,12 @@ const Slider = () => {
                         <h1 className="relative isolate xoverflow-hidden bg-gray-900 h-96 md:h-[600px]">
                             <img
                                 className='bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20 absolute  h-96 md:h-[600px] inset-0 -z-10  w-full object-cover object-right md:object-center'
-                                src="https://i.ibb.co/44gKNST/fernando-alvarez-rodriguez-M7-Gdd-Pq-Jowg-unsplash.jpg" alt="" />
+                                src="https://i.ibb.co/MVQ48Xw/Hoan-Kiem.jpg" alt="" />
                             <div className="mx-auto px-6 lg:px-8 h-96 md:h-[600px] flex justify-center items-center text-center">
                                 <div className="mx-auto xmax-w-2xl lg:mx-0 border-b-4 uppercase xrounded">
                                     <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl p-4">
                                         <Typewriter
-                                            words={['Welcome to Sylhet', 'Welcome to Bangladesh', 'Welcome to Himaloy']}
+                                            words={['Welcome to Angkor Wat', 'Welcome to Hoan Kiem Lake', 'Welcome to Himaloy']}
                                             cursor={true} cursorStyle='|' loop={Infinity} typeSpeed={100} deleteSpeed={100} delaySpeed={1000} />
                                     </h2>
                                 </div>
@@ -83,12 +83,12 @@ const Slider = () => {
                         <h1 className="relative isolate xoverflow-hidden bg-gray-900 h-96 md:h-[600px]">
                             <img
                                 className='bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20 absolute  h-96 md:h-[600px] inset-0 -z-10  w-full object-cover object-right md:object-center'
-                                src="https://images.unsplash.com/photo-1577624060070-ca1afe89ddad?q=80&w=1626&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                                src="https://i.ibb.co/wdn1M7M/Komodo-National-Park.webp" alt="" />
                             <div className="mx-auto px-6 lg:px-8 h-96 md:h-[600px] flex justify-center items-center text-center">
                                 <div className="mx-auto xmax-w-2xl lg:mx-0 border-b-4 uppercase xrounded">
                                     <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl p-4">
                                         <Typewriter
-                                            words={['Welcome to Sylhet', 'Welcome to Bangladesh', 'Welcome to Himaloy']}
+                                            words={['Welcome to Angkor Wat', 'Welcome to Hoan Kiem Lake', 'Welcome to Himaloy']}
                                             cursor={true} cursorStyle='|' loop={Infinity} typeSpeed={100} deleteSpeed={100} delaySpeed={1000} />
                                     </h2>
                                 </div>
@@ -98,25 +98,6 @@ const Slider = () => {
                     </div>
                 </SwiperSlide>
 
-                <SwiperSlide>
-                    <div>
-                        <h1 className="relative isolate xoverflow-hidden bg-gray-900 h-96 md:h-[600px]">
-                            <img
-                                className='bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20 absolute  h-96 md:h-[600px] inset-0 -z-10  w-full object-cover object-right md:object-center'
-                                src="https://images.unsplash.com/photo-1577624060070-ca1afe89ddad?q=80&w=1626&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-                            <div className="mx-auto px-6 lg:px-8 h-96 md:h-[600px] flex justify-center items-center text-center">
-                                <div className="mx-auto xmax-w-2xl lg:mx-0 border-b-4 uppercase xrounded">
-                                    <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl p-4">
-                                        <Typewriter
-                                            words={['Welcome to Sylhet', 'Welcome to Bangladesh', 'Welcome to Himaloy']}
-                                            cursor={true} cursorStyle='|' loop={Infinity}  typeSpeed={100} deleteSpeed={100} delaySpeed={1000} />
-                                    </h2>
-                                </div>
-                            </div>
-                        </h1>
-
-                    </div>
-                </SwiperSlide>
                 <div className="autoplay-progress" slot="container-end" ref={progressCircle}>
                     {/* <svg viewBox="0 0 48 48" ref={progressCircle}>
                         <circle cx="24" cy="24" r="20"></circle>
