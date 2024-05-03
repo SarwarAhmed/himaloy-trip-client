@@ -46,7 +46,9 @@ const Home = () => {
                                 <img src={spot.image} alt={spot.touristSpotName} />
                             </figure>
                             <h2 className="card-title">{spot.touristSpotName}</h2>
-                            <p>{spot.shortDescription}</p>
+                            {
+                                spot.shortDescription.length > 100 ? <p>{spot.shortDescription.slice(0, 100)}...</p> : <p>{spot.shortDescription}</p>
+                            }
                             <Link to={`/spot/${spot._id}`} className="btn btn-primary">Read More</Link>
                         </div>
                     </div>
@@ -81,7 +83,10 @@ const Home = () => {
                                                 <img src={spot.image} alt={spot.touristSpotName} />
                                             </figure>
                                             <h2 className="card-title">{spot.touristSpotName}</h2>
-                                            <p>{spot.shortDescription}</p>
+                                            {/* <p>{spot.shortDescription}</p> */}
+                                            {
+                                                spot.shortDescription.length > 100 ? <p>{spot.shortDescription.slice(0, 100)}...</p> : <p>{spot.shortDescription}</p>
+                                            }
                                             <Link to={`/spot/${spot._id}`} className="btn btn-primary">Read More</Link>
                                         </div>
                                     </div>
