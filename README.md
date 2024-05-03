@@ -21,6 +21,8 @@
 - A registered User can Add a new spot
 - Authorized user can edit/update and delete spot
 
+This website mainly focused on South Asian Countrires.
+
 
 ## npm package name which I have used:
 React, Vite, React-simple-tyepwriter, Lottie React, Swiper, Sweetalert and more
