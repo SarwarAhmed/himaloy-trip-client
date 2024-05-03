@@ -1,4 +1,4 @@
-# Himaloy Estate [Live Preview](https://himaloytrip.web.app/)
+# Himaloy Trip [Live Preview](https://himaloytrip.web.app/)
 ## Website Features
 
 - User-friendly interface: Our website provides a clean and intuitive interface.
