@@ -21,7 +21,7 @@ const route = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: () => fetch('http://127.0.0.1:5000/allspots'),
+                loader: () => fetch('https://himaloy-trip-server.vercel.app/allspots'),
             },
             {
                 path: "/register",
@@ -38,14 +38,14 @@ const route = createBrowserRouter([
             {
                 path: '/myList',
                 element: <PrivateRoute><MyList /></PrivateRoute>,
-                loader: () => fetch('http://127.0.0.1:5000/myList')
+                loader: () => fetch('https://himaloy-trip-server.vercel.app/myList')
             },
 
             // update spot
             {
                 path: '/editSpot/:id',
                 element: <PrivateRoute><UpdateSpot /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://127.0.0.1:5000/editSpot/${params.id}`),
+                loader: ({ params }) => fetch(`https://himaloy-trip-server.vercel.app/editSpot/${params.id}`),
             },
             {
                 path: '/addspot',
@@ -56,12 +56,12 @@ const route = createBrowserRouter([
             {
                 path: '/spot/:id',
                 element: <PrivateRoute><Spot /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://127.0.0.1:5000/spot/${params.id}`),
+                loader: ({ params }) => fetch(`https://himaloy-trip-server.vercel.app/spot/${params.id}`),
             },
             {
                 path: '/allspots',
                 element: <AllSpots />,
-                loader: () => fetch('http://127.0.0.1:5000/allspots'),
+                loader: () => fetch('https://himaloy-trip-server.vercel.app/allspots'),
             }
         ]
     },

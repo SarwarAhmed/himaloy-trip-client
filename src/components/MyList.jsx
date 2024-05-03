@@ -32,7 +32,7 @@ const MyList = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://127.0.0.1:5000/deleteSpot/${_id}`, {
+                fetch(`https://himaloy-trip-server.vercel.app/deleteSpot/${_id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())

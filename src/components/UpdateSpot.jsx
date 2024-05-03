@@ -46,7 +46,7 @@ const UpdateSpot = () => {
 
 
         // sent data to the server
-        fetch(`http://127.0.0.1:5000/updateSpot/${_id}`, {
+        fetch(`https://himaloy-trip-server.vercel.app/updateSpot/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -70,7 +70,7 @@ const UpdateSpot = () => {
 
     return (
         <div>
-            <div className="hero pt-10 xmin-h-screen bg-base-200">
+            <div className="hero py-10 xmin-h-screen bg-base-200">
                 <div className="card shrink-0 w-full max-w-2xl shadow-2xl bg-base-100">
                     <h2 className="text-center mt-5 text-xl font-bold">Add a Tourist Spot</h2>
                     <form onSubmit={handleUpdateSpotForm} className="card-body grid md:grid-cols-2">
@@ -92,18 +92,17 @@ const UpdateSpot = () => {
                             <label className="label">
                                 <span className="label-text">Country Name</span>
                             </label>
-                            {/* <input type="text" name="country" placeholder="Country" className="input input-bordered" required /> */}
                             <select className="select select-bordered w-full max-w-xs" name="country">
-                                {/* <option disabled selected>Select Country</option> */}
                                 <option disabled>Select Country</option>
-                                <option value={country === "Bangladesh" ? "selected" : ""}>Bangladesh</option>
-                                <option value={country === "Thailand" ? "selected" : ""}>Thailand</option>
-                                <option value={country === "India" ? "selected" : ""}>India</option>
-                                <option value={country === "Indonesia" ? "selected" : ""}>Indonesia</option>
-                                <option value={country === "Malaysia" ? "selected" : ""}>Malaysia</option>
-                                <option value={country === "Japan" ? "selected" : ""}>Japan</option>
-                                <option value={country === "Vietnam" ? "selected" : ""}>Vietnam</option>
-                                <option value={country === "Combodia" ? "selected" : ""}>Combodia</option>
+                                <option value="Bangladesh" >Bangladesh</option>
+                                <option value="India" >India</option>
+                                <option value="Thailand" >Thailand</option>
+                                <option value="Indonesia" >Indonesia</option>
+                                <option value="Mayanmar" >Mayanmar</option>
+                                <option value="Janan" >Janan</option>
+                                <option value="Vietnam" >Vietnam</option>
+                                <option value="Combodia" >Combodia</option>
+
                             </select>
                         </div>
 
@@ -139,7 +138,7 @@ const UpdateSpot = () => {
                             <label className="label">
                                 <span className="label-text">Travel Time</span>
                             </label>
-                            <input type="text" name="travelTime" value={travelTime} placeholder="Travel Time" className="input input-bordered" required />
+                            <input type="text" name="travelTime" defaultValue={travelTime} placeholder="Travel Time" className="input input-bordered" required />
                         </div>
 
                         <div className="form-control">

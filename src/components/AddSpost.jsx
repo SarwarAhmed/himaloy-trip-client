@@ -30,7 +30,7 @@ const AddSpost = () => {
 
         console.log(newSpot);
 
-        fetch('http://localhost:5000/touristSpot', {
+        fetch('https://himaloy-trip-server.vercel.app/touristSpot', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -46,6 +46,7 @@ const AddSpost = () => {
                     text: 'Tourist Spot Added Successfully',
 
                 })
+                form.reset();
             });
     };
 
@@ -55,7 +56,7 @@ const AddSpost = () => {
 
     return (
         <div>
-            <div className="hero pt-10 xmin-h-screen bg-base-200">
+            <div className="hero py-10 xmin-h-screen bg-base-200">
                 <div className="card shrink-0 w-full max-w-2xl shadow-2xl bg-base-100">
                     <h2 className="text-center mt-5 text-xl font-bold">Add a Tourist Spot</h2>
                     <form onSubmit={handleAddSpotForm} className="card-body grid md:grid-cols-2">
@@ -78,13 +79,13 @@ const AddSpost = () => {
                                 <span className="label-text">Country Name</span>
                             </label>
                             {/* <input type="text" name="country" placeholder="Country" className="input input-bordered" required /> */}
-                            <select className="select select-bordered w-full max-w-xs" name="country">
+                            <select className="select select-bordered w-full max-w-xs" value="country">
                                 <option disabled selected>Select Country</option>
                                 <option value="Bangladesh">Bangladesh</option>
                                 <option value="Thailand">Thailand</option>
                                 <option value="India">India</option>
                                 <option value="Indonesia">Indonesia</option>
-                                <option value="Malaysia">Malaysia</option>
+                                <option value="Mayanmar">Mayanmar</option>
                                 <option value="Japan">Japan</option>
                                 <option value="Vietnam">Vietnam</option>
                                 <option value="Combodia">Combodia</option>

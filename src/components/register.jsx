@@ -65,7 +65,7 @@ const Register = () => {
                 const createdAt = new Date().toISOString();
                 //  user data with email
                 const createdUser = { ...data, createdAt, uid: user.uid }
-                fetch('http://127.0.0.1:5000/addUser', {
+                fetch('https://himaloy-trip-server.vercel.app/addUser', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
