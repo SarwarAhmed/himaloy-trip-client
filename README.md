@@ -1,4 +1,64 @@
 # Himaloy Trip [Live Preview](https://himaloytrip.web.app/)
+
+[Server Site Repo](https://github.com/SarwarAhmed/himaloy-trip-server)
+
+## Setup client site
+### Step 1: Clone the repository
+```
+git clone https://github.com/SarwarAhmed/himaloy-trip-client.git
+```
+or
+```
+gh repo clone SarwarAhmed/himaloy-trip-client
+```
+### Step 2
+```
+cd himaloy-trip-client
+```
+
+### Step 3
+```
+touch .env
+```
+
+### Step 4: Setup Firebase configuration `.env`
+```
+VITE_APIKEY=apiKey
+VITE_AUTHDOMAIN=authDomain
+VITE_PROJECTID=projectId
+VITE_STORAGEBUCKET=storageBucket
+VITE_MESSAGINGSENDERID=messagingSenderId
+VITE_APPID=appId
+```
+### Step 5
+```
+npm install
+npm run dev
+```
+
+## Setup Server site
+```
+git clone https://github.com/SarwarAhmed/himaloy-trip-server.git
+```
+or
+```
+gh repo clone SarwarAhmed/himaloy-trip-server
+```
+
+```
+cd himaloy-trip-server
+```
+Setup .env
+```
+DB_USER=MongoDB_username
+DB_PASS=MongoDB_password
+```
+```
+npm install
+npm run dev
+```
+
+
 ## Website Features
 
 - User-friendly interface: Our website provides a clean and intuitive interface.
